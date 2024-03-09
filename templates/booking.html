@@ -1,0 +1,180 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+</head>
+
+<body>
+  <style>
+    .card {
+      margin: auto;
+      border: solid 1px #dbdad7;
+      width: 60%;
+      padding-left: 10px !important;
+      padding-bottom: 10px !important;
+      padding-right: 10px !important;
+      padding-top: 0px !important;
+
+    }
+
+    .card-title {
+      margin-top: 10px;
+
+      padding: 15px;
+      background-color: #D64B4B;
+      font-size: large;
+      color: white;
+      width: 100%;
+    }
+
+    div.card-body {
+      padding: 0px;
+    }
+
+    .custom-select {
+      width: 100%;
+    }
+
+    .btn2 {
+      margin-left: 10%;
+    }
+
+    .bx {
+      width: 100%;
+      outline: 0 !important;
+      border-width: 0 0 2px !important;
+      border-color: #d1d1cf !important;
+
+    }
+
+    input {
+      outline: 0 !important;
+      border-width: 0 0 2px !important;
+      border-color: #d1d1cf !important;
+    }
+
+    input:focus {
+      border-color: #d1d1cf !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+    select {
+
+      outline: 0 !important;
+      border-width: 0 0 2px !important;
+      border-color: #d1d1cf !important;
+    }
+
+    select:focus {
+      border-color: #d1d1cf !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+    .radiobtn {
+      margin-left: 3.5%;
+      font-size: large;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .card {
+        margin: auto;
+        border: solid 1px #dbdad7;
+        width: 100%;
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+        padding-right: 10px !important;
+        padding-top: 0px !important;
+
+      }
+
+
+    }
+  </style>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    {% for msg in messages %}
+    swal('{{msg}}');
+
+    {% endfor %}
+  </script>
+  <div class="card shadow mb-5 bg-white rounded">
+
+
+
+
+
+    <hr>
+
+    <form method="post">
+      {% csrf_token %}
+      <label class="card-title text-center shadow mb-5 rounded">Available Seats</label>
+
+      <div class="row">
+
+        <div class="col-sm-4">
+          <label class="radiobtn" style="font-weight: bold;">Total-Seats</label> <label class="form-control"
+            style="margin-left: 3.5%;">{{tseat}}</label>
+
+        </div>
+
+        <div class="col-sm-4">
+          <label class="radiobtn" style="font-weight: bold;">Window</label> <label
+            class="form-control">{{window}}</label>
+        </div>
+
+        <div class="col-sm-4">
+          <label class="radiobtn" style="font-weight: bold;">General</label> <label class="form-control"
+            style="margin-right: 3.5px;">{{General}}</label>
+
+        </div>
+
+
+
+      </div>
+      <div class="row" style="margin-top: 10px;">
+
+        <div class="col-sm-6">
+          <label class="radiobtn" style="font-weight: bold;">Price</label> <label class="form-control"
+            style="margin-left: 3.5%;">{{price}} &#8377</label>
+        </div>
+
+      </div>
+      <div class="row" style="margin-top: 10px;">
+
+        <div class="col-sm-6">
+          <label class="radiobtn" style="font-weight: bold;">Add Seats</label> <input type="number" max="{{tseat}}"
+            min="1" required class="form-control" style="margin-left: 3.5%;" name="addseat"></label>
+        </div>
+
+        <div class="col-sm-6" style="margin-top: 35px;">
+          <select class="browser-default custom-select mb-4" id="select" name="sc">
+            <option value="General" selected="">General</option>
+            <option value="window">Window</option>
+
+          </select>
+        </div>
+      </div>
+
+
+
+      <button class="btn btn-primary float-right mt-5" type="submit"
+        style="background-color: #D64B4B;margin-left: 30px;">Book</button>
+      <a class="btn btn-primary float-right mt-5" href="{%url 'user_home' %}"
+        style="background-color: #D64B4B;margin-left: 10px;">Back</a>
+
+
+  </div>
+
+  </form>
+  </div>
+
+</body>
+<!--Card-->
+
+</html>

@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/password.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../static/h3.css">
+</head>
+
+<body>
+    <script>
+
+        {% for msg in messages %}
+        swal('{{msg}}');
+
+        {% endfor %}
+
+    </script>
+    <div class="topnav" style="width: 1290px; height: 70px;">
+        <a class="a1" href="{% url 'home' %}">Home</a>
+        <a class="a2" href="{% url 'history' %}">History</a>
+        <a class="a2" href="{%url 'book_ticket_list' %}">Booked Ticket</a>
+        <a class="a2" href="{% url 'profile' %}">Profile</a>
+        <a class="a3" href="{% url 'logout' %}">Logout</a>
+    </div>
+    <div style="margin-top: 20px;margin-left: 30px;">
+        <label style="font-family: 'Poppins'; font-size: 35px; font-weight: bold;">Schedules</label>
+
+    </div>
+    <table class="table table-striped" style="align:center; margin-top: 20px ;">
+        <tr>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">bus_number</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Mobile_no</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">from</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">to</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Date</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Time</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">total_seats</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">general</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">window</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">price</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Bus type</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Update</th>
+        </tr>
+        {% for result in data %}
+        {% if result.agency_number == number %}
+
+
+        <tr>
+
+            <td style="font-family: Poppins;">{{result.bus_number}}</td>
+            <td style="font-family: Poppins;">{{result.agency_number}}</td>
+            <td style="font-family: Poppins;">{{result.form}}</td>
+            <td style="font-family: Poppins;">{{result.to}}</td>
+            <td style="font-family: Poppins;">{{result.date}}</td>
+
+            <td style="font-family: Poppins;">{{result.time}}</td>
+
+            <td style="font-family: Poppins;">{{result.total_seats}}</td>
+
+            <td style="font-family: Poppins;">{{result.general}}</td>
+
+            <td style="font-family: Poppins;">{{result.window}}</td>
+
+            <td style="font-family: Poppins;">{{result.price}}</td>
+
+            <td style="font-family: Poppins;">{{result.bus_type}}</td>
+            <td style="font-family: Poppins;"><a href="{{result.id}}" width="100" height="100" class="link-danger">Edit
+            </td>
+
+
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</body>
+
+</html>

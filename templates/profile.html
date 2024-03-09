@@ -1,0 +1,94 @@
+<html>
+
+<head>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../static/h4.css">
+</head>
+
+<body>
+
+  <div>
+
+    <div class="topnav" style="width: 1290px; height: 70px;">
+
+      <a class="a1" href="{%url 'home'%}">Home</a>
+      <a class="a2" href="{% url 'history' %}">History</a>
+      <a class="a2" href="{%url 'book_ticket_list' %}">Booked Ticket</a>
+      <a class="a2">Profile</a>
+      <a class="a3" href="{% url 'logout' %}">Logout</a>
+    </div>
+
+
+
+    <section class="vh-400" style="background-color: #f4f5f7;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-6 mb-4 mb-lg-0">
+            <div class="card mb-3" style="border-radius: .5rem;">
+              <div class="row g-0">
+                <div class="col-md-4 gradient-custom text-center text-red"
+                  style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                  <img src="../media/file/bus.jfif" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+                  <h4 style="font-family: Poppins;color: rgb(255, 255, 255);">{{data.agency_name}}</h5>
+                    <p style="font-family: Poppins; color:floralwhite;">Travel agency</p>
+                    <i class="far fa-edit mb-5"></i>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body p-4">
+                    <h4 style="font-family: Poppins;color: brown;">Information</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6 style="font-family: Poppins;color: brown;">Email</h6>
+                          <p class="text-muted" style="width: fit-content;">{{data.email}}</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6 style="font-family: Poppins;color: brown;">Phone</h6>
+                          <p class="text-muted">{{data.mobile_no}}</p>
+                        </div>
+                      </div>
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6 style="font-family: Poppins;color: brown;">Address</h6>
+                          <p class="text-muted" style="width: fit-content;">{{data.address}}</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6 style="font-family: Poppins;color: brown;">Aadhar_no</h6>
+                          <p class="text-muted">{{data.aadhar_no}}</p>
+                        </div>
+                      </div>
+                      <h6>Certificate</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <span class="glyphicon glyphicon-list-alt" href="{{data.file}}"></span><a href="{{data.file}}"
+                            width="100" height="100" class="link-danger" style="margin-left: 10px;"> Certificate</a>
+                        </div>
+
+                      </div>
+                      <div class="d-flex justify-content-start">
+                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--from and to-->
+
+  </div>
+  </div>
+</body>
+
+</html>

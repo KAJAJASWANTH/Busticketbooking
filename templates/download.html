@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <title>{{cname}} (Bus Ticket({{date}}))</title>
+</head>
+
+<body>
+    <script>
+        window.print(document.getElementById("d"))
+    </script>
+    <div id="d">
+
+        <div class="my-5 page" size="A4">
+            <div class="p-5">
+                <section class="top-content bb d-flex justify-content-between">
+                    <div class="logo">
+                        <img src="../static/bus.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="top-left">
+                        <div class="graphic-path">
+                            <p>Bus Booking</p>
+                        </div>
+                        <div class="position-relative">
+                            <p>Booking Time :- <span>{{btime}}</span></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="store-user mt-5">
+                    <div class="col-10">
+                        <div class="row bb pb-3">
+                            <div class="col-7">
+                                <p>Customer,</p>
+                                <h2>{{cname}}</h2>
+                                <div class="txn mt-2"><label>Mobile No :- </label>{{cnumber}}</div>
+                            </div>
+                            <div class="col-5">
+                                <p>Travel Agency,</p>
+                                <h2>{{aname}}</h2>
+                                <p class="address"> {{address}} </p>
+                                <p class="address">Mobile No :-{{anumber}}</p>
+                            </div>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded"
+                            style="height: max-content; display: list-item;margin-top: 20px;list-style: none;">
+                            <div style="display: flex;">
+                                <div style=" width: 100px; border-radius: 10px; text-align: left;">
+                                    <span style="margin-left: 20px;">From</span>
+                                    <h2 style="font-size: larger;margin-left: 20px;">{{from}}</h2>
+                                </div>
+                                <div style="margin-left: 30px; margin-top: 20px;">
+                                    <i class="fas fa-exchange-alt" style="size: 20px;"></i>
+                                </div>
+                                <div style="margin-left: 30px; border-radius: 10px; width: 100px; ">
+                                    <span style="margin-left: 20px;">To</span>
+                                    <h2 style="font-size: larger; margin-left: 20px;">{{to}}</h2>
+                                </div>
+
+                            </div>
+
+                            <div class="row extra-info pt-3">
+
+                                <div class="col-5">
+                                    <p>Date: <span>{{date}}</span></p>
+                                    <p>Time: <span>{{time}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <table class="table table-bordered" style="width: max-content;margin-left: 13px;align-items: center;">
+                    <tr>
+                        <th style=" background-color: #D64B4B;">Ticket id</th>
+                        <th style=" background-color: #D64B4B;">Bus number</th>
+                        <th style=" background-color: #D64B4B;">Bus Type</th>
+                        <th style=" background-color: #D64B4B;">Seat Type</th>
+                        <th style=" background-color: #D64B4B;">Seats</th>
+                        <th style=" background-color: #D64B4B;">Payment Type</th>
+                        <th style=" background-color: #D64B4B;">Amount</th>
+                    </tr>
+                    <tr>
+                        <td>{{tid}}</td>
+                        <td>{{busnumber}}</td>
+                        <td>{{btype}}</td>
+                        <td>{{seattype}}</td>
+                        <td>{{seats}}</td>
+                        <td> Online</td>
+                        <td>{{amount}} &#8377</td>
+
+                    </tr>
+                </table>
+
+
+
+
+
+
+            </div>
+
+
+
+
+</body>
+
+</html>

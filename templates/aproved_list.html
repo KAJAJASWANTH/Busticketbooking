@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/password.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../static/h3.css">
+</head>
+
+<body>
+    <script>
+
+        {% for msg in messages %}
+        swal('{{msg}}');
+
+        {% endfor %}
+
+    </script>
+    <div class="topnav" style="width: 1290px; height: 70px;">
+        <a class="a1" href="{% url 'adhome'%}">Home</a>
+        <a class="a2" style="background-color: #f2f2f2; color: black;">approved_agency</a>
+        <a class="a3" href="{% url 'logout' %}">Logout</a>
+    </div>
+    <table class="table table-striped" style="align:center;margin-left: 5px; margin-top: 20px;">
+        <tr>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">agency_name</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Mobile_no</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Email_id</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Address</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">Addhar_no</th>
+            <th style=" background-color: #D64B4B;
+                font-family: 'Poppins';color:#f2f2f2">certificate</th>
+        </tr>
+        {% for result in data %}
+        <tr>
+            <td style="font-family: Poppins;">{{result.agency_name}}</td>
+            <td style="font-family: Poppins;">{{result.mobile_no}}</td>
+            <td style="font-family: Poppins;">{{result.email}}</td>
+            <td style="font-family: Poppins;">{{result.address}}</td>
+            <td style="font-family: Poppins;">{{result.aadhar_no}}</td>
+            <td style="font-family: Poppins;"><a href="{{result.file}}" width="100" height="100" class="link-danger">
+                    Certificate</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
